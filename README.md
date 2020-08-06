@@ -1,4 +1,4 @@
 # Ejercicio Onready
 
 
-Ejercicio realizado como prueba para un puesto de desarrollador.
+Ejercicio realizado como prueba para cubrir un puesto de desarrollador.
