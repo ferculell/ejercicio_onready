@@ -42,8 +42,8 @@ class Motorcycle extends Vehicle {
 // Esta función instancia las clases construyendo una lista de objetos a partir de la lista de datos ingresados.
 // Toma como argumento la lista de datos ingresados.
 function makeVehicleList(list) {
-  var result = [];
-  for (var i = 0; i < list.length; i++) {
+  let result = [];
+  for (let i = 0; i < list.length; i++) {
     if (typeof list[i][3] === 'number') {
       result.push(new Car(list[i][0], list[i][1], list[i][2], list[i][3]))
     }
@@ -57,8 +57,8 @@ function makeVehicleList(list) {
 // Esta función retorna el vehículo con el precio más alto, buscando el valor más alto para la propiedad 'price' en toda la lista de objetos.
 // Toma como argumento la lista de objetos donde buscar.
 function findMaxPrice(list) {
-  var max = list[0];
-  for (var i = 0; i < list.length; i++) {
+  let max = list[0];
+  for (let i = 0; i < list.length; i++) {
     if (list[i].price > max.price) {
       max = list[i];
     }
@@ -69,8 +69,8 @@ function findMaxPrice(list) {
 // Esta función retorna el vehículo con el precio más bajo, buscando el valor más bajo para la propiedad 'price' en toda la lista de objetos.
 // Toma como argumento la lista de objetos donde buscar.
 function findMinPrice(list) {
-  var min = list[0];
-  for (var i = 0; i < list.length; i++) {
+  let min = list[0];
+  for (let i = 0; i < list.length; i++) {
     if (list[i].price < min.price) {
       min = list[i];
     }
@@ -81,8 +81,8 @@ function findMinPrice(list) {
 // Esta función retorna el objeto cuya propiedad 'model' incluye en su valor dterminado caracter pasado como argumento.
 // Toma como argumentos el caracter buscado y la lista de objetos donde buscar.
 function findLetterInModel(letter, list) {
-  var result = null;
-  for (var i = 0; i < list.length; i++) {
+  let result = null;
+  for (let i = 0; i < list.length; i++) {
     if (list[i].model.includes(letter)) {
       result = list[i];
     }
@@ -101,7 +101,7 @@ var letterY = findLetterInModel('Y', vehicleList);
 /////////////// SALIDA ///////////////
 
 // En esta sección comienza el algoritmo de impresión para la salida de resultados por consola.
-for (var i = 0; i < vehicleList.length; i++) {
+for (let i = 0; i < vehicleList.length; i++) {
   if (vehicleList[i] instanceof Car) {
     console.log('Marca: %s // Modelo: %s // Puertas: %i // Precio: %s', vehicleList[i].brand, vehicleList[i].model, vehicleList[i].doors, vehicleList[i].price.toLocaleString("es-AR", {style:"currency", currency: "ARS"}));
   }
@@ -119,6 +119,6 @@ vehicleList.sort((a, b) => b.price - a.price);
 
 console.log('='.repeat(29))
 console.log('Vehículos ordenados por precio de mayor a menor:')
-for (i = 0; i < vehicleList.length; i++) {
+for (let i = 0; i < vehicleList.length; i++) {
   console.log('%s %s', vehicleList[i].brand, vehicleList[i].model)
 }
